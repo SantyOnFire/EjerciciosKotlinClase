@@ -77,6 +77,6 @@ fun main() {
         }
     }
 
-    // Cerramos el escáner para evitar fugas de memoria
+    // Y ya Cerramos el escáner para evitar fugas de memoria
     scanner.close()
 }
