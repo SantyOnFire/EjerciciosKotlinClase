@@ -1,37 +1,55 @@
-import kotlin.random.Random
-
 fun main() {
-    print("INTRODUZCA LA  CANTIDAD DE DINERO PARA INICIAR: ")
-    var dinero = readLine()?.toDoubleOrNull() ?: return
-    var jugando = true
+    // Variables para contar los votos de cada candidato
+    var votosAInternet = 0
+    var votosARadio = 0
+    var votosATelevision = 0
 
-    while (jugando && dinero > 0) {
-        val numero = Random.nextInt(1, 4) // Genera un número aleatorio entre 1 y 3
-        println("Número obtenido: $numero")
+    var votosBInternet = 0
+    var votosBRadio = 0
+    var votosBTelevision = 0
 
-        when (numero) {
-            3 -> {
-                println("¡Perdio todo su dinero!")
-                dinero = 0.0
-                jugando = false
-            }
-            2 -> {
-                dinero /= 2
-                println("Perdio la mitad de su dinero: ahora tiene: $dinero")
-            }
-            1 -> {
-                dinero *= 2
-                println("¡Duplico la cantidad de dinero que tenia: $dinero")
-            }
-        }
+    var votosCInternet = 0
+    var votosCRadio = 0
+    var votosCTelevision = 0
 
-        if (dinero > 0) {
-            print("¿Quiere seguir jugando? (si/no): ")
-            val respuesta = readLine()
-            if (respuesta?.lowercase() != "s") {
-                jugando = false
-            }
-        }
-    }
-    println("El Juego terminado. Dinero final: $dinero")
+    // Variable para el total de votos
+    var totalVotos = 0
+    // Simulación de votos
+    println("Votando...")
+
+    // Voto 1 internet
+    votosAInternet++
+    totalVotos++
+
+    // Voto 2 Rd
+    votosBRadio++
+    totalVotos++
+
+    // Voto 3 TV
+    votosCTelevision++
+    totalVotos++
+
+    println("\nResultados de la elección:")
+    println("Candidato A:")
+    println("  Votos por Internet: $votosAInternet")
+    println("  Votos por Radio: $votosARadio")
+    println("  Votos por Televisión: $votosATelevision")
+    println("  Total de votos: ${votosAInternet + votosARadio + votosATelevision}")
+    println("  Costo de campaña: $${(votosAInternet * 700000) + (votosARadio * 200000) + (votosATelevision * 600000)}")
+
+    println("Candidato B:")
+    println("  Votos por Internet: $votosBInternet")
+    println("  Votos por Radio: $votosBRadio")
+    println("  Votos por Televisión: $votosBTelevision")
+    println("  Total de votos: ${votosBInternet + votosBRadio + votosBTelevision}")
+    println("  Costo de campaña: $${(votosBInternet * 700000) + (votosBRadio * 200000) + (votosBTelevision * 600000)}")
+
+    println("Candidato C:")
+    println("  Votos por Internet: $votosCInternet")
+    println("  Votos por Radio: $votosCRadio")
+    println("  Votos por Televisión: $votosCTelevision")
+    println("  Total de votos: ${votosCInternet + votosCRadio + votosCTelevision}")
+    println("  Costo de campaña: $${(votosCInternet * 700000) + (votosCRadio * 200000) + (votosCTelevision * 600000)}")
+
+    println("\nTotal de votos en la elección: $totalVotos")
 }
