@@ -21,7 +21,7 @@ fun main() {
     votosAInternet++
     totalVotos++
 
-    // Voto 2 Rd
+    // Voto 2 Radio
     votosBRadio++
     totalVotos++
 
